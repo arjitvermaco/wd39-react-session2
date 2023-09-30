@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useRef } from 'react'
+import LoginValidated from './components/LoginValidated';
 
-function App() {
+export default function App() {
+  //useRef 
+  const inputRef = useRef();
+
+  function handleClick(){
+    console.log(inputRef)
+    inputRef.current.focus()
+
+    console.log(inputRef.current.value)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* <input ref={inputRef} placeholder="Click the button"/>
+      <button onClick={handleClick}>Click Me</button> */}
+      <LoginValidated/>
     </div>
-  );
+  )
 }
-
-export default App;
